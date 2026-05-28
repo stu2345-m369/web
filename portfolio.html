@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงานที่ภาคภูมิใจ - My Portfolio</title>
+    <style>
+        /* ตั้งค่าสไตล์พื้นฐาน */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 50px 20px;
+        }
+
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+
+        /* ส่วนหัวข้อประจำหน้า */
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+
+        .header h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #e67e22; /* สีส้มสะท้อนความภูมิใจและพลังงาน */
+            margin: 10px auto 0 auto;
+            border-radius: 2px;
+        }
+
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+
+        /* ส่วนการจัดวางการ์ดผลงาน (Portfolio Grid) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+
+        /* สไตล์ของการ์ดผลงานแต่ละชิ้น */
+        .portfolio-card {
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+
+        .portfolio-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+
+
+        /* ส่วนรูปภาพผลงาน */
+        .portfolio-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.08); /* เอฟเฟกต์ซูมรูปภาพเมื่อเมาส์ชี้ */
+        }
+
+
+        /* ป้ายกำกับประเภทผลงาน */
+        .category-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: #e67e22;
+            color: #fff;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+
+        /* ส่วนเนื้อหาภายในรายละเอียด */
+        .portfolio-content {
+            padding: 25px;
+        }
+
+
+        .portfolio-content h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+
+        .portfolio-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            height: 70px; /* จำกัดความสูงข้อความเพื่อให้การ์ดเท่ากัน */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* แสดงข้อความสูงสุด 3 บรรทัด */
+            -webkit-box-orient: vertical;
+        }
+
+
+        /* ปุ่มกดดูผลงานเพิ่มเติม */
+        .btn-view {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            background-color: #2c3e50;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+
+        .btn-view:hover {
+            background-color: #e67e22;
+        }
+
+
+        /* ปุ่มย้อนกลับหน้าหลัก */
+        .back-home {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+
+        .btn-back {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #7f8c8d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+
+        .btn-back:hover {
+            background-color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+       
+        <div class="header">
+            <h1>ผลงานที่ภาคภูมิใจ</h1>
+            <p>แข่งขันเอแม็ท ได้รับรางวัลอันดับที่2 ระดับจังหวัด</p>
+        </div>
+
+
+        <div class="portfolio-grid">
+
+
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper">
+                    <span class="category-tag">Web Design</span>
+                    <img src="https://via.placeholder.com/400x250" alt="โปรเจกต์เว็บแอปพลิเคชัน">
+                </div>
+                <div class="portfolio-content">
+                    <h3>โปรเจกต์ระบบบริหารจัดการร้านค้า</h3>
+                    <p>พัฒนาเว็บไซต์ระบบ POS บนคลาวด์ ช่วยลดเวลาการเช็กสต็อกสินค้าได้ถึง 40% โดยเลือกใช้ HTML, CSS, JavaScript และฐานข้อมูลในการจัดการ</p>
+                    <a href="#" class="btn-view">ดูรายละเอียดโปรเจกต์</a>
+                </div>
+            </div>
+
+
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper">
+                    <span class="category-tag">Application</span>
+                    <img src="https://via.placeholder.com/400x250" alt="แอปพลิเคชันมือถือ">
+                </div>
+                <div class="portfolio-content">
+                    <h3>แอปพลิเคชันบันทึกรายรับ-รายจ่าย</h3>
+                    <p>ออกแบบและพัฒนาแอปพลิเคชันส่วนบุคคลเพื่อช่วยวินัยทางการเงินของผู้ใช้ มีระบบแสดงผลกราฟวงกลมสรุปค่าใช้จ่ายประจำเดือนที่ดูง่าย</p>
+                    <a href="#" class="btn-view">ดูรายละเอียดโปรเจกต์</a>
+                </div>
+            </div>
+
+
+            <div class="portfolio-card">
+                <div class="portfolio-img-wrapper">
+                    <span class="category-tag">UX/UI Design</span>
+                    <img src="https://via.placeholder.com/400x250" alt="งานออกแบบ UX/UI">
+                </div>
+                <div class="portfolio-content">
+                    <h3>ออกแบบ UI เว็บไซต์ท่องเที่ยวชุมชน</h3>
+                    <p>งานดีไซน์โครงสร้างเว็บไซต์ (Wireframe & Prototype) บน Figma เน้นความมินิมอล ใช้งานง่ายสำหรับผู้สูงอายุ และเข้าถึงข้อมูลได้รวดเร็ว</p>
+                    <a href="#" class="btn-view">ดูรายละเอียดโปรเจกต์</a>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="back-home">
+            <a href="index.html" class="btn-back">← ย้อนกลับไปหน้าหลัก</a>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
