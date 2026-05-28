@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ช่องทางติดต่อ - Contact Me</title>
+    <style>
+        /* ตั้งค่าสไตล์พื้นฐาน */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+
+        body {
+            background-color: #f0f3f6;
+            color: #333;
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+
+        /* หัวข้อประจำหน้า */
+        .contact-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+
+        .contact-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+
+        .contact-header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+
+        /* กล่องเนื้อหาหลักแบบแบ่งครึ่ง (Flexbox) */
+        .contact-wrapper {
+            display: flex;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            flex-wrap: wrap; /* รองรับมือถือให้สลับลงมาด้านล่าง */
+        }
+
+
+        /* ฝั่งซ้าย: ข้อมูลการติดต่อของเรา */
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+
+        .contact-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1abc9c;
+        }
+
+
+        .info-details {
+            margin-bottom: 30px;
+        }
+
+
+        .info-item {
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+
+        .info-item strong {
+            display: block;
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+
+        /* โซเชียลมีเดียลิงก์ด้านล่างฝั่งซ้าย */
+        .social-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 0.95rem;
+            padding: 5px 10px;
+            border: 1px solid #7f8c8d;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+
+        .social-links a:hover {
+            background-color: #1abc9c;
+            border-color: #1abc9c;
+        }
+
+
+        /* ฝั่งขวา: ฟอร์มติดต่อ */
+        .contact-form-wrapper {
+            flex: 1.5;
+            min-width: 320px;
+            padding: 40px;
+        }
+
+
+        .contact-form-wrapper h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+            font-size: 0.95rem;
+        }
+
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #1abc9c; /* เปลี่ยนสีขอบเมื่อคลิกพิมพ์ */
+        }
+
+
+        /* ปุ่มส่งข้อความ */
+        .btn-submit {
+            display: inline-block;
+            width: 100%;
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+
+        .btn-submit:hover {
+            background-color: #16a085;
+        }
+
+
+        /* ปุ่มย้อนกลับหน้าหลัก */
+        .back-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+
+        .btn-back {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #7f8c8d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+
+        .btn-back:hover {
+            background-color: #95a5a6;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+       
+        <div class="contact-header">
+            <h1>ติดต่อฉัน</h1>
+            <p>มีคำถาม ข้อเสนอแนะ หรือสนใจร่วมงานกัน ส่งข้อความมาได้เลยครับ</p>
+        </div>
+
+
+        <div class="contact-wrapper">
+           
+            <div class="contact-info">
+                <div>
+                    <h2>ข้อมูลติดต่อ</h2>
+                    <div class="info-details">
+                        <div class="info-item">
+                            <strong>อีเมล (Email)</strong>
+                            your.email@example.com
+                        </div>
+                        <div class="info-item">
+                            <strong>เบอร์โทรศัพท์ (Phone)</strong>
+                            097-193-4136
+                        </div>
+                        <div class="info-item">
+                            <strong>ที่อยู่ (Location)</strong>
+                            กรุงเทพมหานคร, ประเทศไทย
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank">Facebook</a>
+                    <a href="https://line.me" target="_blank">Line</a>
+                    <a href="https://github.com" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+
+            <div class="contact-form-wrapper">
+                <h2>ส่งข้อความหาฉัน</h2>
+                <form action="#" method="POST">
+                   
+                    <div class="form-group">
+                        <label for="name">ชื่อผู้ติดต่อ</label>
+                        <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อของคุณ" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="email">อีเมลของคุณ</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="subject">หัวข้อข้อความ</label>
+                        <input type="text" id="subject" name="subject" placeholder="ต้องการติดต่อเรื่องอะไร" required>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="message">รายละเอียดข้อความ</label>
+                        <textarea id="message" name="message" rows="5" placeholder="พิมพ์ข้อความของคุณที่นี่..." required></textarea>
+                    </div>
+
+
+                    <button type="submit" class="btn-submit">ส่งข้อความ</button>
+                </form>
+            </div>
+
+
+        </div>
+
+
+        <div class="back-home">
+            <a href="index.html" class="btn-back">← ย้อนกลับไปหน้าหลัก</a>
+        </div>
+
+
+    </div>
+
+
+</body>
+</html>
